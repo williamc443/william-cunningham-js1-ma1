@@ -43,9 +43,6 @@ function catfunc(catArray){
         console.log(catArray[i].name);
     }
 }
-
-// Question 8
-
 // Cat Array
 const cats = [
     {
@@ -61,20 +58,19 @@ const cats = [
     }
 ];
 
-// Function 
-
-function catFunc(catArray){
+// Question 8
+function createCats(cats) {
     let catText = "";
-    for(var i=0; i < catArray.length; i++){
-        let catAge = "Age unknown";
-        if(catArray[i].age){
-            catAge = catArray[i].age;
+    for (let i = 0; i < cats.length; i++) {
+        let catAge = "Age Unknown";
+        if (cats[i].age) {
+            catAge = cats[i].age;
         }
-        catText += `<h5>${catArray[i].name}</h5>
-                    <p>${catAge}</p>`;
+        catText += `<h5>${cats[i].name}</h5>
+            <p>${catAge}</p>`;
     }
     return catText;
 }
-
-const catHTML = catFunc(cats);
-resultsContainer.innerHTML = catHTML;
+const catHTML = createCats(cats);
+const container = document.querySelector('.cat-container');
+container.innerHTML = catHTML;
