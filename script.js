@@ -1,4 +1,3 @@
-
 // Question 1
 
 const cat = {
@@ -21,6 +20,9 @@ heading.style.fontSize = "2em";
 
 heading.classList.add("subHeading");
 
+//to see my changes got applied in the console
+console.log(heading)
+
 // Question 5
 
 const paragraphs = document.querySelectorAll("p");
@@ -38,9 +40,9 @@ resultsContainer.style.background = "yellow";
 
 // Question 7
 
-function catfunc(catArray){
-    for(var i=0; i <catArray.length; i++){
-        console.log(catArray[i].name);
+function catnames(cats){
+    for(var i=0; i <cats.length; i++){
+        console.log(cats[i].name);
     }
 }
 // Cat Array
@@ -58,6 +60,7 @@ const cats = [
     }
 ];
 
+
 // Question 8
 function createCats(cats) {
     let catText = "";
@@ -66,11 +69,13 @@ function createCats(cats) {
         if (cats[i].age) {
             catAge = cats[i].age;
         }
-        catText += `<h5>${cats[i].name}</h5>
-            <p>${catAge}</p>`;
+        catText += `<div><h5>${cats[i].name}</h5>
+            <p>${catAge}</p></div>`;
     }
     return catText;
 }
 const catHTML = createCats(cats);
 const container = document.querySelector('.cat-container');
 container.innerHTML = catHTML;
+
+console.log(container);
